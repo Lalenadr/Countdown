@@ -28,12 +28,34 @@ console.log(days,hours,minutes,seconds); // klopt*/
     console.log(days,hours,minutes,seconds) // CTRL + C om da spel stop te zetten
       
     // Output the result in an element with id="demo"
-    /*document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
+    document.getElementById("demo").innerHTML = days + " Days " + hours + " Hours "
+    + minutes + " Minutes " + seconds + " Seconds";
       
     // If the count down is over, write some text 
-    if (distance < 0) {
+    /*if (distance < 0) {
       clearInterval(x);
       document.getElementById("demo").innerHTML = "EXPIRED";
     }*/
   }, 1000);
+
+  let secondHand=document.querySelector("#sec");  
+        let minHand=document.querySelector("#min")  
+        let hourHand=document.querySelector("#hr")  
+
+
+        setInterval(clockRotating,1000)  
+
+        function clockRotating(){  
+            var date=new Date();  
+            var getSeconds=date.getSeconds()/60;  
+            var getMinutes=date.getMinutes()/60;  
+            var getHours=date.getHours()/12  
+
+            secondHand.style.transform="rotate("+getSeconds*360 + "deg)"  
+            minHand.style.transform="rotate("+getMinutes*360 + "deg)"  
+            hourHand.style.transform="rotate("+getHours*360 + "deg)"  
+
+            document.querySelector(".current-day").innerHTML=date.toDateString()  
+            document.querySelector(".current-seconds").innerHTML=date.getSeconds()  
+
+        }  

@@ -8,25 +8,48 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+<style>
+
+Body{  
+    animation-name: clock-animation;  /*geeft kleur*/
+    animation-iteration-count: infinite;  
+    animation-duration: 6s;  
+    width: 100vw;  
+    height: 100vh;    
+    justify-content: center;  
+    align-items: center;  
+    font-size: 15px; /*uren op de klok*/ 
+    overflow-x: hidden;  
+    font-family: cursive;  
+
+}  
+
+@keyframes clock-animation{  
+0%{  
+background:#3e5afb;  
+
+
+}  
+50%{  
+    background:rgb(238, 51, 197);  
+
+}  
+
+    100%{  
+        background: rgb(132, 0, 255);  
+    }  
+}  
+
+  </style>  
+
+</head>
   <body>
-    <br><br><br>
-    <div class="container">
-      <div class="row">
-      <div class="col-sm">
-    <p id="days"></p>
-  </div>
-  <div class="col-sm">
-    <p id="hours"></p>
-  </div>
-  <div class="col-sm">
-    <p id="mins"></p>
-  </div>
-  <div class="col-sm">
-    <p id="secs"></p>
-  </div>
-  </div>
-  </div>
+      <div class="container-fluid">
+          <br><br>
+        <p id="demo" class="text-center display-3"></p>
+      </div>
+     
+      
     <!-- Optional JavaScript -->
     <script src="count.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
